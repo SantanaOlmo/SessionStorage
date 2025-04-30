@@ -42,4 +42,4 @@ const metodoPagoHtml = document.querySelector('input[name="metodo"]:checked');
 ```
 En este caso, utilizo esto porque no busco un elemento con un id concreto, sino que busco una opcion seleccionada. De todos los elementos con nombre "metodo" (refiriéndose al método de pago) necesito quedarme con la opción que se haya pulsado. Si no existe, se asigna null.
 
-&copy 2025 Alberto Estepa Gómez
+©  2025 Alberto Estepa Gómez
