@@ -43,4 +43,7 @@ const metodoPagoHtml = document.querySelector('input[name="metodo"]:checked');
 ```
 En este caso, utilizo esto porque no busco un elemento con un id concreto, sino que busco una opcion seleccionada. De todos los elementos con nombre "metodo" (refiriéndose al método de pago) necesito quedarme con la opción que se haya pulsado. Si no existe, se asigna null.
 
+#### GitHub Pages
+El último problema que me he encontrado ha venido de la mano de las GitHub Pages, ya que pensé en enviar además del archivo _.zip_ un enlace a la página que he desplegado con la funcionalidad que ofrece Github. La página está linkada al principio de este readme, pero sin embargo, nunca llega a entrar en acción el script. He probado a cambiar la ruta en index.html por: _./js/script.js_, _/SessionStorage/js/script.js_ y no funciona. 
+
 ©  2025 Alberto Estepa Gómez

@@ -1,6 +1,5 @@
 //cuando se carga la pagina ejecuto el codigo
 window.onload = function(){
-    alert("Bienvenido");
 
     if (window.location.pathname === "/index.html"){        
         const boton=document.getElementById("btnEnviar");
