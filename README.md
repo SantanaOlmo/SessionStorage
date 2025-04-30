@@ -33,10 +33,13 @@ Podría volver a sacar todo el código excepto varias líneas que aún me suenan
 let metodoPago = metodoPagoHtml ? metodoPagoHtml.value : null;
 ```
 El interrogante está como preguntando si existe ese elemento. Si existe, nos quedamos la primera parte tras el interrogante y antes de los dos puntos (metodoPagoHtml.value), y en caso contrario nos quedamos con lo que venga tras los dos puntos. De esa forma asignamos algo a la variable metodoPago, ya sea el valor o null, pero no le asignamos el vacío.
+Por eso, era importante en todos los input además del name="metodo" añadirles un atributo value, para que pueda luego acceder a ese valor y añadirlo a otra variable. 
+Y el name"metodo" era importante que fuese el mismo para todos los input, ya que luego accedería al que estuviese seleccionado con la siguiente línea:
+
 
 ```
 const metodoPagoHtml = document.querySelector('input[name="metodo"]:checked');
 ```
+En este caso, utilizo esto porque no busco un elemento con un id concreto, sino que busco una opcion seleccionada. De todos los elementos con nombre "metodo" (refiriéndose al método de pago) necesito quedarme con la opción que se haya pulsado. Si no existe, se asigna null.
 
-
-
+&copy 2025 Alberto Estepa Gómez
