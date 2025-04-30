@@ -58,83 +58,84 @@
     
     <section >
         <h2 class="tituloSection">Compra tus entradas</h2>
-
         <hr>
-        <form action=""></form>
+        <form id="formulario">
 
-        <fieldset>
+            <fieldset>
 
-            <legend>Datos Personales</legend>
-            <label for="nombre">Nombre:</label>
-            <input type="text" class="detalles" id="inputlargo">
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="inputlargo" id="nombre">
 
-        </fieldset>
+            </fieldset>
 
-        <fieldset>
+            <fieldset>
 
-            <legend>Detalles del Concierto</legend>
+                <legend>Detalles del Concierto</legend>
 
-            <label for="fecha">Fecha:</label>
-            <input type="date" name="" class="detalles" id="inputlargo">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" class="inputlargo" id="fecha">
 
-            <label for="">Lugar:</label>
-            <select name="lugar" class="detalles">
+                <label for="">Lugar:</label>
+                <select name="lugar" class="detalles" id="lugar">
 
-                <option value="madrid">Madrid</option>
-                <option value="barcelona">Barcelona</option>
-                <option value="valencia">Valencia</option>
+                    <option value="madrid">Madrid</option>
+                    <option value="barcelona">Barcelona</option>
+                    <option value="valencia">Valencia</option>
 
-            </select>
+                </select>
 
-            <label for="entradas">Cantidad de entradas:</label>
-            <select id="entradas" name="entradas" class="detalles">
+                <label for="entradas">Cantidad de entradas:</label>
+                <select id="cantidad" name="entradas" class="detalles">
 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
 
-            </select>
+                </select>
 
-            <label for="categoria">Categoria:</label>
-            <select name="categoria" class="detalles">
+                <label for="categoria">Categoria:</label>
+                <select name="categoria" class="detalles" id="categoria">
 
-                <option value="General">General</option>
-                <option value="Platino">Platino</option>
-                <option value="Gradas">Gradas</option>
-                <option value="MegaProUltraDeluxe">MegaProUltraDeluxe</option>
+                    <option value="General">General</option>
+                    <option value="Platino">Platino</option>
+                    <option value="Gradas">Gradas</option>
+                    <option value="MegaProUltraDeluxe">MegaProUltraDeluxe</option>
 
-            </select>
+                </select>
 
-        </fieldset>
+            </fieldset>
 
-        <fieldset id="Pago">
+            <fieldset id="pago">
 
-            <legend>Método de pago</legend>
+                <legend>Método de pago</legend>
 
-            <input type="checkbox" name="tarjeta" class="checkbox">
-            <label for="Tarjeta">Tarjeta</label>
+                <input type="radio" name="metodo" id="tarjeta" value="Tarjeta">
+                <label for="tarjeta">Tarjeta</label>
+              
+                <input type="radio" name="metodo" id="paypal" value="PayPal">
+                <label for="paypal">PayPal</label>
+              
+                <input type="radio" name="metodo" id="transferencia" value="Transferencia">
+                <label for="transferencia">Transferencia</label>
+              
+                <input type="radio" name="metodo" id="criptomoneda" value="Criptomoneda">
+                <label for="criptomoneda">Criptomoneda</label>
 
-            <input type="checkbox" name="paypal" class="checkbox">
-            <label for="paypal">PayPal</label>
+            </fieldset>
+            <input type="checkbox" name="acepto" id="acepto">
+            <label for="acepto">Acepto los términos y condiciones</label>
+            <button onclick="enviarElementos()">Enviar</button>
 
-            <input type="checkbox" name="transferencia" class="checkbox">
-            <label for="transferencia">Transferencia</label>
+        </form>
 
-            <input type="checkbox" name="criptomoneda" class="checkbox">
-            <label for="criptomoneda">Criptomoneda</label>
-
-        </fieldset>
-        <input type="checkbox" name="acepto" id="">
-        <label for="acepto">Acepto los términos y condiciones</label>
-        <button>Enviar</button>
-        
     </section>
     <script src="js/script.js"></script>
 </body>

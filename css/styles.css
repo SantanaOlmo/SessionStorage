@@ -80,10 +80,14 @@ fieldset{
     color:  var(--color-gris);
     
 }
-#inputlargo{
+.inputlargo{
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border: 2px solid rgba(123, 123, 123, 0.664);
+    color:  var(--color-gris);
     width: 99%;
 }
-#Pago{
+#pago{
     padding: 1em 1.5em;
     display: flex;
     flex-direction: row;
