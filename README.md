@@ -29,7 +29,7 @@ Del mismo modo, he tenido otros casos en los que he tenido que usar, en ambos ar
 #### Uso de IA
 Podría volver a sacar todo el código excepto varias líneas que aún me suenan raras:
 
-````
+```
 let metodoPago = metodoPagoHtml ? metodoPagoHtml.value : null;
 ```
 El interrogante está como preguntando si existe ese elemento. Si existe, nos quedamos la primera parte tras el interrogante y antes de los dos puntos (metodoPagoHtml.value), y en caso contrario nos quedamos con lo que venga tras los dos puntos. De esa forma asignamos algo a la variable metodoPago, ya sea el valor o null, pero no le asignamos el vacío.
