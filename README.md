@@ -25,3 +25,19 @@ if(indow.location.pathname === "/index.html"){
 ```
 
 Del mismo modo, he tenido otros casos en los que he tenido que usar, en ambos archivos,diferentes formas para conseguir resultados idénticos.En _index.html_ el boton funciona mediante el _boton.addEventListener("click",function(){})_ y en _confirmacion.html_ eso mismo no me funcionaba y opté por utilizar _onclick_="window.location.href='index.html'"_ dentro de la propia etiqueta del botón.
+
+#### Uso de IA
+Podría volver a sacar todo el código excepto varias líneas que aún me suenan raras:
+
+
+´´´
+let metodoPago = metodoPagoHtml ? metodoPagoHtml.value : null;
+´´´
+El interrogante está como preguntando si existe ese elemento. Si existe, nos quedamos la primera parte tras el interrogante y antes de los dos puntos (metodoPagoHtml.value), y en caso contrario nos quedamos con lo que venga tras los dos puntos. De esa forma asignamos algo a la variable metodoPago, ya sea el valor o null, pero no le asignamos el vacío.
+
+```
+const metodoPagoHtml = document.querySelector('input[name="metodo"]:checked');
+```
+
+
+
