@@ -18,6 +18,7 @@ body{
     flex-direction: column;
     justify-content: center;
     gap: 1.5em;
+
 }
 #tituloPagina{
     margin-top: 10px;
@@ -119,4 +120,20 @@ td{
     padding:.5em 0;
     border: 2px solid rgb(202, 202, 202);
     border-collapse: collapse;
+}
+.btn{
+    width: 50px;
+    border:1px solid var(--color-gris);
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+}
+.btn:hover{
+    border:none;
+    background-color:var(--color-azul);
+    color: white;
+}
+.linea{
+    display: flex;
+    gap: 5px;
 }

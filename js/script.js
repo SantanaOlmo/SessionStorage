@@ -1,47 +1,75 @@
-function enviarElementos() {
-    const nombre = document.getElementById("nombre");
-    const fecha = document.getElementById("fecha");
-    const lugar = document.getElementById("lugar");
-    const cantidad = document.getElementById("cantidad");
-    const categoria = document.getElementById("categoria");
-    const metodoPago = document.querySelector('input[name="metodo"]:checked');
-    const acepto = document.getElementById("acepto");
+//cuando se carga la pagina ejecuto el codigo
+window.onload = function(){
 
-    // Mostrar en consola los valores de los campos
-    console.log(nombre.value);
-    console.log(lugar.value);
-    console.log(cantidad.value);
-    console.log(categoria.value);
-    console.log(metodoPago ? metodoPago.value : "No seleccionado");
-    console.log(acepto.checked);
+    if (window.location.pathname === "/index.html"){        
+        const boton=document.getElementById("btnEnviar");
 
-    // Validar que los campos estén completos
-    if (!nombre.value || !fecha.value || !lugar.value || !cantidad.value || !categoria.value || !metodoPago || !acepto.checked) {
-        alert("Por favor, completa todos los campos y acepta los términos.");
-        return;
+        
+        boton.addEventListener("click",function(){
+            const nombreInput = document.getElementById("nombre");
+            const fechaHtml = document.getElementById("fecha");
+            const lugarHtml = document.getElementById("lugar");
+            const cantidadHtml = document.getElementById("cantidad");
+            const categoriaHtml = document.getElementById("categoria");
+            const metodoPagoHtml = document.querySelector('input[name="metodo"]:checked');
+            const aceptoHtml = document.getElementById("acepto");
+            
+            // guardo los el contenido de los elementos
+            let nombre = nombreInput.value;
+            let fecha = fechaHtml.value;
+            let lugar = lugarHtml.value;
+            let cantidad = cantidadHtml.value;
+            let categoria = categoriaHtml.value;
+            let metodoPago = metodoPagoHtml ? metodoPagoHtml.value : null; // Manejo por si no hay selección
+            let acepto = aceptoHtml.checked;
+            
+            // guardo la info con sessionStorage
+            sessionStorage.setItem("nombre", nombre);
+            sessionStorage.setItem("fecha", fecha);
+            sessionStorage.setItem("lugar", lugar);
+            sessionStorage.setItem("cantidad", cantidad);
+            sessionStorage.setItem("categoria", categoria);
+            sessionStorage.setItem("metodoPago", metodoPago);
+            sessionStorage.setItem("acepto", acepto);
+    
+            alert("Nombre: " + sessionStorage.getItem("nombre") + 
+          "\nFecha: " + sessionStorage.getItem("fecha") + 
+          "\nLugar: " + sessionStorage.getItem("lugar") + 
+          "\nCantidad: " + sessionStorage.getItem("cantidad") + 
+          "\nCategoría: " + sessionStorage.getItem("categoria") + 
+          "\nMétodo de pago: " + sessionStorage.getItem("metodoPago") + 
+          "\nAcepto: " + sessionStorage.getItem("acepto"));
+    
+          window.location.href='confirmacion.html';
+          // si no pongo el siguiente alert, no se ejecuta la linea anterior
+            alert("datos enviados");
+        });
+        
+    }else if(window.location.pathname.endsWith('/confirmacion.html')){
+        const btnVolver= document.getElementById("btnVolver");
+
+        btnVolver.addEventListener("click",function(){
+            window.location.href="index.html";
+            sessionStorage.clear();
+        })
+
+        //recojo los nuevos elementos del documento
+        let nombreDeUsuario = document.getElementById("nombreDeUsuario");
+        let fechaYLugar = document.getElementById("fechaYLugar");
+        let cantidad = document.getElementById("Cantidad");
+        let categoria = document.getElementById("categoria");
+        let metodoDePago = document.getElementById("metodoDePago");
+            
+        //les añado la info que tenia gaurdada
+        nombreDeUsuario.textContent=sessionStorage.getItem("nombre");
+        fechaYLugar.textContent = sessionStorage.getItem("fecha")+", "+sessionStorage.getItem("lugar") ;
+        cantidad.textContent = sessionStorage.getItem("cantidad");
+        categoria.textContent = sessionStorage.getItem("categoria");
+        metodoDePago.textContent = sessionStorage.getItem("metodoPago");
+        
+
+
     }
-
-    // Guardar los datos en sessionStorage
-    sessionStorage.setItem("nombre", nombre.value);
-    sessionStorage.setItem("fecha", fecha.value);
-    sessionStorage.setItem("lugar", lugar.value);
-    sessionStorage.setItem("cantidad", cantidad.value);
-    sessionStorage.setItem("categoria", categoria.value);
-    sessionStorage.setItem("metodoPago", metodoPago.value);
-
-    // Redirigir a la página de confirmación
-    window.location.href = "../confirmacion.html";
+    
+    
 }
-
-// Este bloque se ejecuta SOLO en confirmacion.html
-document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.pathname.includes("confirmacion.html")) {
-        document.getElementById("nombreDeUsuario").textContent = sessionStorage.getItem("nombre") || "";
-        document.getElementById("fechaYlugar").textContent = (sessionStorage.getItem("fecha") || "") + " - " + (sessionStorage.getItem("lugar") || "");
-        document.getElementById("Cantidad").textContent = sessionStorage.getItem("cantidad") || "";
-        document.getElementById("categoria").textContent = sessionStorage.getItem("categoria") || "";
-        document.getElementById("metodoDePago").textContent = sessionStorage.getItem("metodoPago") || "";
-    }
-});
-
-
