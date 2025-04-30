@@ -3,7 +3,25 @@
 ### Proceso de trabajo
 1. Creación del repositorio remoto y local
 2. Cración de la estructura de carpetas y archivos
-3. Archivo index.html
-4. Aplicación del diseño con styles.css
-5. Desarrollo del archivo confirmacion.html con las clases e ids usados en index.html para reutilizar styles.css
-6. 
+3. Archivo _index.html_
+4. Aplicación del diseño con _styles.css_
+5. Desarrollo del archivo _confirmacion.html_ con las clases e ids usados en index.html para reutilizar _styles.css_
+6. Revisión del enunciado del ejercicio
+7. Desarrollo el archivo _script.js_
+
+
+#### Desarrollo del script
+El mayor problema que me he encontrado a la hora de realizar el script del proyecto lo he encontrado a la hora de cambiar de pagina y mantener los elementos guardados en el sessionStorage y en el cambio de página en sí. 
+
+Aunque sabía que el cambio de página en javaScript se hacía con window.location.href="rutadelarchivo"; en el _index.html_ no llegaba el código a ejecutar tal línea. De hecho, como he dejado en el comentario, he tenido que escribir un _alert()_ escribiendo un mensaje para que no entiendo muy bien por qué, al pasar llegar al alert, obligatoriamente ha tenido que pasar por la línea de cambio de archivo y de esa forma la ejecuta.
+
+Para verificar que me encuentro en el archivo _confirmacion.html_ he tenido problemas ya que al parecer, la ruta es más larga de lo que me devuelve VSCode al copiar manualmente la ruta relativa: "confirmacion.html". Por eso mismo, he tenido que utilizar, en el else if,una condición diferente a la que uso para verificar que me encuentro en un archivo u otro:
+```
+if(indow.location.pathname === "/index.html"){
+
+}else if(window.location.pathname.endsWith('/confirmacion.html')){
+
+}
+```
+
+Del mismo modo, he tenido otros casos en los que he tenido que usar, en ambos archivos,diferentes formas para conseguir resultados idénticos.En _index.html_ el boton funciona mediante el _boton.addEventListener("click",function(){})_ y en _confirmacion.html_ eso mismo no me funcionaba y opté por utilizar _onclick_="window.location.href='index.html'"_ dentro de la propia etiqueta del botón.

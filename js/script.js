@@ -32,26 +32,19 @@ window.onload = function(){
             sessionStorage.setItem("metodoPago", metodoPago);
             sessionStorage.setItem("acepto", acepto);
     
-            alert("Nombre: " + sessionStorage.getItem("nombre") + 
-          "\nFecha: " + sessionStorage.getItem("fecha") + 
-          "\nLugar: " + sessionStorage.getItem("lugar") + 
-          "\nCantidad: " + sessionStorage.getItem("cantidad") + 
-          "\nCategoría: " + sessionStorage.getItem("categoria") + 
-          "\nMétodo de pago: " + sessionStorage.getItem("metodoPago") + 
-          "\nAcepto: " + sessionStorage.getItem("acepto"));
-    
-          window.location.href='confirmacion.html';
-          // si no pongo el siguiente alert, no se ejecuta la linea anterior
-            alert("datos enviados");
+          if (
+            nombre && fecha && lugar && cantidad && categoria && metodoPago !== null && acepto) {
+            
+            window.location.href='confirmacion.html';
+            // si no pongo el siguiente alert, no se ejecuta la linea anterior
+            alert("Datos procesados")
+          }else{
+                alert("Rellene todos los campos"); 
+          }
         });
         
     }else if(window.location.pathname.endsWith('/confirmacion.html')){
         const btnVolver= document.getElementById("btnVolver");
-
-        btnVolver.addEventListener("click",function(){
-            window.location.href="index.html";
-            sessionStorage.clear();
-        })
 
         //recojo los nuevos elementos del documento
         let nombreDeUsuario = document.getElementById("nombreDeUsuario");

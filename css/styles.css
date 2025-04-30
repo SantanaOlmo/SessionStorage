@@ -18,6 +18,7 @@ body{
     flex-direction: column;
     justify-content: center;
     gap: 1.5em;
+    padding-bottom: 20px;
 
 }
 #tituloPagina{
@@ -26,13 +27,22 @@ body{
     font-size: 4em;
 
 }
+#tituloConfirmacion{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 3em;
+    color: rgb(81, 81, 81);
+}
 #imgGrupo{
     border-radius: 10px;
     width: 400px;
     margin: auto;
+    box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.163);
+
 }
 
 section{
+    max-width: 800px;
     box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.163);
     background-color: white;
     border-radius: 10px;
@@ -46,9 +56,10 @@ section{
         margin-bottom: 1em;
     }
    .tituloSection{
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: rgb(75, 75, 75);
     font-weight: 700;
+    margin-bottom: 5px;
    }
 
 }
@@ -128,12 +139,20 @@ td{
     text-align: center;
     margin: auto;
 }
+#lineaFinal{
+   display: inline-flex;
+   gap: 2em;
+   
+}
 .btn:hover{
-    border:none;
+    border-color: var(--color-azul);
     background-color:var(--color-azul);
     color: white;
 }
 .linea{
     display: flex;
     gap: 5px;
+}
+#acepto{
+    margin-left: 9em;
 }
