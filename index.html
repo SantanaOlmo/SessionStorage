@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStorage</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1 id="tituloPagina">JOE HISAISHI</h1>
+    <img id="imgGrupo" src="img/grupo.jpg" alt="joeHisaishi.png">
+   
+    <section id="Descripcion">
+        <h2 class="tituloSection">Descripción del grupo</h2>
+
+        <hr>
+        <p>
+            Joe Hisaishi es un reconocido compositor japonés, célebre por sus emotivas bandas sonoras en películas de 
+            Studio Ghibli como *El viaje de Chihiro* y *Mi vecino Totoro*. Su estilo combina música clásica, minimalismo 
+            y elementos electrónicos. Sus conciertos ofrecen una experiencia única que conecta profundamente con el público.
+        </p>
+    </section>
+    <section class="Fechas">
+        <h2 class="tituloSection">Fechas de conciertos</h2>
+
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <td>Fecha</td>
+                    <td>Lugar</td>
+                    <td>Hora</td>
+                    <td>Precio</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>15/06/2025</td>
+                    <td>Barcelona - Palau de la Música</td>
+                    <td>20:00</td>
+                    <td>45€</td>
+                </tr>
+                <tr>
+                    <td>22/06/2025</td>
+                    <td>Madrid - Teatro Real</td>
+                    <td>21:00</td>
+                    <td>50€</td>
+                </tr>
+                <tr>
+                    <td>30/06/2025</td>
+                    <td>Valencia - Palau de les Arts</td>
+                    <td>19:30</td>
+                    <td>42€</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section >
+        <h2 class="tituloSection">Compra tus entradas</h2>
+
+        <hr>
+        <form action=""></form>
+
+        <fieldset>
+
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="detalles" id="inputlargo">
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>Detalles del Concierto</legend>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="" class="detalles" id="inputlargo">
+
+            <label for="">Lugar:</label>
+            <select name="lugar" class="detalles">
+
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="valencia">Valencia</option>
+
+            </select>
+
+            <label for="entradas">Cantidad de entradas:</label>
+            <select id="entradas" name="entradas" class="detalles">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
+
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" class="detalles">
+
+                <option value="General">General</option>
+                <option value="Platino">Platino</option>
+                <option value="Gradas">Gradas</option>
+                <option value="MegaProUltraDeluxe">MegaProUltraDeluxe</option>
+
+            </select>
+
+        </fieldset>
+
+        <fieldset id="Pago">
+
+            <legend>Método de pago</legend>
+
+            <input type="checkbox" name="tarjeta" class="checkbox">
+            <label for="Tarjeta">Tarjeta</label>
+
+            <input type="checkbox" name="paypal" class="checkbox">
+            <label for="paypal">PayPal</label>
+
+            <input type="checkbox" name="transferencia" class="checkbox">
+            <label for="transferencia">Transferencia</label>
+
+            <input type="checkbox" name="criptomoneda" class="checkbox">
+            <label for="criptomoneda">Criptomoneda</label>
+
+        </fieldset>
+        <input type="checkbox" name="acepto" id="">
+        <label for="acepto">Acepto los términos y condiciones</label>
+        <button>Enviar</button>
+        
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
